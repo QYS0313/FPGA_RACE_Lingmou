@@ -1,0 +1,7 @@
+Software/Host_Software/Runtime/
+Software/Host_Software/Logs/
+Software/Host_Software/Backups/
+SHA256SUMS.json
+Rebuilt/
+__pycache__/
+*.pyc

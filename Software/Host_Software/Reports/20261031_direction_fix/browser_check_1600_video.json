@@ -1,0 +1,189 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "original_mesh_count",
+      "passed": true
+    },
+    {
+      "name": "original_triangle_count",
+      "passed": true
+    },
+    {
+      "name": "fixed_base",
+      "passed": true
+    },
+    {
+      "name": "pan_hierarchy",
+      "passed": true
+    },
+    {
+      "name": "tilt_hierarchy",
+      "passed": true
+    },
+    {
+      "name": "internal_structure",
+      "passed": true
+    },
+    {
+      "name": "assembled_structure",
+      "passed": true
+    },
+    {
+      "name": "joint_rotation",
+      "passed": true
+    },
+    {
+      "name": "webgl",
+      "passed": true
+    },
+    {
+      "name": "encoder_wrap",
+      "passed": true
+    },
+    {
+      "name": "video_workspace",
+      "passed": true
+    },
+    {
+      "name": "video_model_visible",
+      "passed": true
+    },
+    {
+      "name": "video_layout_width",
+      "passed": true
+    },
+    {
+      "name": "video_mode_0",
+      "passed": true
+    },
+    {
+      "name": "video_mode_1",
+      "passed": true
+    },
+    {
+      "name": "video_mode_2",
+      "passed": true
+    },
+    {
+      "name": "video_mode_3",
+      "passed": true
+    },
+    {
+      "name": "video_mode_4",
+      "passed": true
+    },
+    {
+      "name": "video_mode_5",
+      "passed": true
+    },
+    {
+      "name": "video_selection_green",
+      "passed": true
+    },
+    {
+      "name": "video_encoder_pose",
+      "passed": true
+    },
+    {
+      "name": "shared_model_preserves_pose",
+      "passed": true
+    },
+    {
+      "name": "corrected_pitch_direction",
+      "passed": true
+    },
+    {
+      "name": "wasd_request_w",
+      "passed": true
+    },
+    {
+      "name": "wasd_model_moves_w",
+      "passed": true
+    },
+    {
+      "name": "wasd_release_w",
+      "passed": true
+    },
+    {
+      "name": "wasd_request_a",
+      "passed": true
+    },
+    {
+      "name": "wasd_model_moves_a",
+      "passed": true
+    },
+    {
+      "name": "wasd_release_a",
+      "passed": true
+    },
+    {
+      "name": "wasd_request_s",
+      "passed": true
+    },
+    {
+      "name": "wasd_model_moves_s",
+      "passed": true
+    },
+    {
+      "name": "wasd_release_s",
+      "passed": true
+    },
+    {
+      "name": "wasd_request_d",
+      "passed": true
+    },
+    {
+      "name": "wasd_model_moves_d",
+      "passed": true
+    },
+    {
+      "name": "wasd_release_d",
+      "passed": true
+    },
+    {
+      "name": "tracking_pitch_15",
+      "passed": true
+    },
+    {
+      "name": "tracking_pitch_-15",
+      "passed": true
+    },
+    {
+      "name": "tracking_model_restored",
+      "passed": true
+    },
+    {
+      "name": "layout_width",
+      "passed": true
+    },
+    {
+      "name": "no_script_errors",
+      "passed": true
+    },
+    {
+      "name": "timeline_visible",
+      "passed": true
+    },
+    {
+      "name": "local_control_channel",
+      "passed": true
+    },
+    {
+      "name": "stop_button_visible",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "preview": true,
+  "source_sha256": "b57bcdbfbf650069a2fc20a358beccc8f75ff22d7335b0ab5236ae00bfef5911",
+  "viewport": {
+    "width": 1574,
+    "height": 1000,
+    "timeline_bottom": 959.1875
+  },
+  "width": 1600,
+  "height": 1100,
+  "screenshot": "console_1600_video.png",
+  "exit_code": 0
+}

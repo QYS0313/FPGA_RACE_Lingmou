@@ -1,0 +1,29 @@
+﻿Image: tracking; Demo ID: D2
+Generated: 2026-10-28T21:35:57.0345035+08:00
+SHA256: E585FBC22C826063EFE3CF56BC3D0E5BDFE7A2410380784E4F4835EF3F8CF6B9
+Multi Boot: mult_boot_en=1
+Explicit home only; no motor or laser auto-start.
+
+-----------------------------------------------------------
+| QoR metrics               |         value               |
+-----------------------------------------------------------
+| Timing                    |                             |
+|     Setup WNS             |          106                |
+|     Setup TNS             |            0                |
+|     Num of violated S-EP  |            0                |
+|     Hold WNS              |           20                |
+|     Hold TNS              |            0                |
+|     Num of violated H-EP  |            0                |
+-----------------------------------------------------------
+| Routing Resource          |                             |
+|     Wire length           |      6026576                |
+-----------------------------------------------------------
+| Utilization               |                             |
+|     #slices               |        18981                |
+|     slices percentage     |       89.47%                |
+|     #RAMs                 |           41                |
+|     #DSPs                 |           37                |
+|     #DRAMHARDCON          |           37                |
+-----------------------------------------------------------
+Report route stage QoR done.
+

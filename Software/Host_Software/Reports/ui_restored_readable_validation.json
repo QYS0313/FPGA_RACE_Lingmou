@@ -1,0 +1,188 @@
+{
+  "date": "2026-10-30",
+  "theme": "restored_graphite_mint",
+  "active_stylesheets": [
+    "Web/console.css",
+    "Web/refined.css",
+    "Web/readable.css"
+  ],
+  "restored_model_rendering_matches_previous": true,
+  "primary_text_px": [
+    13,
+    14
+  ],
+  "angle_number_px": [
+    32,
+    40
+  ],
+  "unit_tests_passed": 14,
+  "browser_checks": [
+    {
+      "passed": true,
+      "checks": [
+        {
+          "name": "original_mesh_count",
+          "passed": true
+        },
+        {
+          "name": "original_triangle_count",
+          "passed": true
+        },
+        {
+          "name": "fixed_base",
+          "passed": true
+        },
+        {
+          "name": "pan_hierarchy",
+          "passed": true
+        },
+        {
+          "name": "tilt_hierarchy",
+          "passed": true
+        },
+        {
+          "name": "internal_structure",
+          "passed": true
+        },
+        {
+          "name": "assembled_structure",
+          "passed": true
+        },
+        {
+          "name": "joint_rotation",
+          "passed": true
+        },
+        {
+          "name": "webgl",
+          "passed": true
+        },
+        {
+          "name": "encoder_wrap",
+          "passed": true
+        },
+        {
+          "name": "video_workspace",
+          "passed": true
+        },
+        {
+          "name": "layout_width",
+          "passed": true
+        },
+        {
+          "name": "no_script_errors",
+          "passed": true
+        },
+        {
+          "name": "timeline_visible",
+          "passed": true
+        },
+        {
+          "name": "local_control_channel",
+          "passed": true
+        },
+        {
+          "name": "stop_button_visible",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "preview": true,
+      "source_sha256": "b57bcdbfbf650069a2fc20a358beccc8f75ff22d7335b0ab5236ae00bfef5911",
+      "viewport": {
+        "width": 1574,
+        "height": 1000,
+        "timeline_bottom": 959.1875
+      },
+      "width": 1600,
+      "height": 1100,
+      "screenshot": "console_1600.png",
+      "exit_code": 0
+    },
+    {
+      "passed": true,
+      "checks": [
+        {
+          "name": "original_mesh_count",
+          "passed": true
+        },
+        {
+          "name": "original_triangle_count",
+          "passed": true
+        },
+        {
+          "name": "fixed_base",
+          "passed": true
+        },
+        {
+          "name": "pan_hierarchy",
+          "passed": true
+        },
+        {
+          "name": "tilt_hierarchy",
+          "passed": true
+        },
+        {
+          "name": "internal_structure",
+          "passed": true
+        },
+        {
+          "name": "assembled_structure",
+          "passed": true
+        },
+        {
+          "name": "joint_rotation",
+          "passed": true
+        },
+        {
+          "name": "webgl",
+          "passed": true
+        },
+        {
+          "name": "encoder_wrap",
+          "passed": true
+        },
+        {
+          "name": "video_workspace",
+          "passed": true
+        },
+        {
+          "name": "layout_width",
+          "passed": true
+        },
+        {
+          "name": "no_script_errors",
+          "passed": true
+        },
+        {
+          "name": "timeline_visible",
+          "passed": true
+        },
+        {
+          "name": "local_control_channel",
+          "passed": true
+        },
+        {
+          "name": "stop_button_visible",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "preview": true,
+      "source_sha256": "b57bcdbfbf650069a2fc20a358beccc8f75ff22d7335b0ab5236ae00bfef5911",
+      "viewport": {
+        "width": 1414,
+        "height": 900,
+        "timeline_bottom": 876.1875
+      },
+      "width": 1440,
+      "height": 1000,
+      "screenshot": "console_1440_video.png",
+      "exit_code": 0
+    }
+  ],
+  "device_connected": false,
+  "screenshots": [
+    "Screenshots/ui_restored_readable_tracking.png",
+    "Screenshots/ui_restored_readable_video.png"
+  ]
+}

@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+/* Larger type on the restored graphite / mint visual theme. */
+html, body { font-size: 14px; }
+.brand-name { font-size: 23px; }
+.brand-name small { font-size: 10px; letter-spacing: 1.5px; }
+.rail-section-label { font-size: 12px; }
+.nav-item span { font-size: 14px; letter-spacing: 0; }
+.rail-signature { font-size: 12px; }
+.rail-signature small { font-size: 9px; }
+.wordmark { font-size: 14px; }
+.wordmark span { font-size: 10px; }
+.breadcrumb, .connection, .connection select { font-size: 13px; }
+.connection select { width: 90px; }
+.connect-button, .subtle { font-size: 13px; }
+.eyebrow { font-size: 10px; letter-spacing: 2px; }
+h1, .page-heading h1 { font-size: 32px; }
+.page-heading p { font-size: 13px; }
+.page-heading { margin-bottom: 20px; }
+.local-pill { font-size: 12px; }
+
+.metric { min-height: 132px; padding: 18px 17px; }
+.metric-label { font-size: 12px; }
+.metric-label em { font-size: 11px; }
+.metric-content > strong { font-size: 20px; }
+.metric-content .number { font-size: 36px; }
+.number small { font-size: 18px; }
+.metric-note, .metric-note b { font-size: 11px; }
+.axis-state { font-size: 10px; top: auto; bottom: 14px; right: 14px; }
+.tiny-tag { font-size: 10px; }
+.metric > .tiny-tag { font-size: 9px; }
+
+.tracking-workspace, .video-workspace { grid-template-columns: minmax(0, 1fr) 332px; }
+.main-column, .control-column { height: calc(100vh - 392px); max-height: none; min-height: 500px; }
+.chart-card { height: 166px; }
+.panel-heading h2, .control-title h2 { font-size: 15px; }
+.panel-heading h2 > span { font-size: 11px; }
+.overline { font-size: 9px; letter-spacing: 1.2px; }
+.model-heading h2 { font-size: 17px; }
+.model-heading h2 span { font-size: 12px; }
+.feedback-pill { font-size: 11px; }
+.stage-caption > span { font-size: 11px; }
+.stage-caption b { font-size: 14px; }
+.stage-caption > div { font-size: 10px; }
+.viewport-hint { font-size: 11px; }
+.orientation-label { font-size: 9px; }
+.joint-pin b { font-size: 9px; }
+.joint-pin em { font-size: 12px; }
+.segmented button, .demo-button { font-size: 12px; }
+.model-footer > span { font-size: 11px; }
+.model-footer { gap: 10px; }
+.chart-title h2 { font-size: 14px; }
+.chart-title h2 > span, .chart-duration { font-size: 11px; }
+.legend { font-size: 10px; }
+#chart-empty { font-size: 13px; }
+
+/* Parameters can scroll in a shorter window; motion controls stay visible. */
+.control-column > .control-card { display: flex; flex-direction: column; height: auto; max-height: 100%; min-height: 0; flex: none; }
+.control-card .control-body { display: flex; flex-direction: column; flex: 1; min-height: 0; padding: 14px 19px; }
+.tracking-parameters { flex: 1; min-height: 0; overflow-y: auto; padding: 1px 4px 2px 0; scrollbar-gutter: stable; }
+.tracking-actions { flex: none; }
+.tracking-actions .control-separator { margin: 14px 0 12px; }
+.field-label, .control-card .section-label { font-size: 13px; }
+.field-label > span { font-size: 11px; }
+.calibration-file b { font-size: 13px; }
+.calibration-file small { font-size: 11px; }
+.section-label span { font-size: 9px; }
+.control-card .section-label { margin: 17px 0 13px; }
+.control-card .range-field, .range-field output, .inline-field, .toggle-row { font-size: 13px; }
+.control-card .range-field { gap: 10px; margin-bottom: 16px; }
+.number-field input { font-size: 13px; }
+.number-field span { font-size: 11px; }
+.home-button { font-size: 13px; min-height: 36px; margin-bottom: 9px; }
+.control-card .primary { font-size: 14px; min-height: 42px; }
+.two-buttons .button { font-size: 12px; min-height: 36px; }
+.secondary-actions button { font-size: 11px; }
+.control-card .secondary-actions { margin-top: 13px; }
+.shape-card summary > span, .record-card > div { font-size: 13px; }
+.record-card small { font-size: 11px; }
+.record-button { font-size: 12px; }
+.shape-body p { font-size: 12px; }
+.shape-fields label, .stack-field, .three-fields label, .rectangle-fields label, .model-config-fields label { font-size: 13px; }
+.shape-fields input, .shape-fields select, .stack-field select, .three-fields select, .rectangle-fields input, .model-config-fields input, .model-config-fields select { font-size: 13px; }
+.mode-tile b { font-size: 15px; }
+.mode-tile small { font-size: 11px; }
+.mode-tile.selected { background: #254d3c; border-color: #81e8b5; color: #a5f3c9; box-shadow: inset 0 0 0 1px #81e8b530; }
+.mode-tile.selected b { color: #c8f8dc; }
+.mode-tile.selected small, .mode-tile.selected > span { color: #91cdb0; }
+/* The same live assembly occupies the top of either workspace. */
+.video-main, .video-side { min-width: 0; }
+.video-main > .model-card { flex: none; height: clamp(345px, 34vh, 410px); }
+.video-main .mode-tile { min-height: 104px; padding: 14px; }
+.video-main .mode-tile svg { margin-bottom: 10px; }
+.option-checks { font-size: 13px; }
+.rectangle-fields .primary { font-size: 12px; }
+.video-stats > p { font-size: 13px; }
+.text-button { font-size: 12px; }
+.jog-hint { font-size: 12px; }
+.muted { font-size: 12px; }
+.statusbar, .statusbar button { font-size: 11px; }
+.statusbar > span { font-size: 9px; }
+.logs-list, .log-entry time { font-size: 12px; }
+.toast { font-size: 14px; }
+
+@media (min-width: 1700px) {
+  .metric-content .number { font-size: 40px; }
+  .main-column, .control-column { height: calc(100vh - 402px); }
+}
+@media (max-width: 1450px) {
+  .nav-item span { font-size: 12px; }
+  .metric-content .number { font-size: 35px; }
+  .model-footer > span { display: none; }
+  .main-column, .control-column { height: calc(100vh - 388px); }
+}
+@media (max-width: 1200px) {
+  .tracking-workspace, .video-workspace { grid-template-columns: minmax(0, 1fr) 300px; }
+  .metric-icon { display: none; }
+  .metric-content > strong { font-size: 18px; }
+  .metric-content .number { font-size: 32px; }
+  .metric-note, .metric-note b { font-size: 10px; }
+  .metric-label em { font-size: 10px; }
+  .axis-state { font-size: 9px; }
+  .page-heading h1 { font-size: 29px; }
+  .model-heading h2 { font-size: 15px; }
+  .assembly-glyph { display: none; }
+  .feedback-pill { font-size: 10px; }
+  .chart-title h2 > span { display: none; }
+  .control-card .control-body { padding: 14px 16px; }
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>灵眸 · 视觉云台控制台</title><link rel="stylesheet" href="console.css"><link rel="stylesheet" href="refined.css"><link rel="stylesheet" href="readable.css"></head>
+<body data-model-ready="true" data-qa-passed="true">
+<svg class="icon-defs" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"></circle><circle cx="12" cy="12" r="2.5"></circle><path d="M12 2v4m0 12v4M2 12h4m12 0h4"></path></symbol>
+<symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="5" width="13" height="14" rx="3"></rect><path d="m16 10 5-3v10l-5-3"></path></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 4v16h17M7 15l4-5 4 3 5-7"></path></symbol>
+<symbol id="i-cube" viewBox="0 0 24 24"><path d="m12 2 9 5v10l-9 5-9-5V7Zm0 10 9-5M12 12 3 7m9 5v10"></path></symbol>
+<symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 7h16M4 17h16"></path><circle cx="9" cy="7" r="3"></circle><circle cx="15" cy="17" r="3"></circle></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><path d="m10 7 3-3a5 5 0 0 1 7 7l-3 3M14 17l-3 3a5 5 0 0 1-7-7l3-3m1 6 8-8"></path></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7Z"></path></symbol>
+<symbol id="i-stop" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect></symbol>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7M6 9v12h12V9M10 21v-7h4v7"></path></symbol>
+<symbol id="i-power" viewBox="0 0 24 24"><path d="M12 2v10M7 5a9 9 0 1 0 10 0"></path></symbol>
+<symbol id="i-fit" viewBox="0 0 24 24"><path d="M9 3H3v6m12-6h6v6M3 15v6h6m12-6v6h-6"></path><rect x="8" y="8" width="8" height="8" rx="1"></rect></symbol>
+<symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 8a9 9 0 0 0-15-3L2 8m0-6v6h6M4 16a9 9 0 0 0 15 3l3-3m0 6v-6h-6"></path></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 10 5-10 5L2 8Zm-9 9 9 5 9-5M3 16l9 5 9-5"></path></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"></path></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"></path></symbol>
+<symbol id="i-file" viewBox="0 0 24 24"><path d="M13 3H5v18h14V9Zm0 0v6h6M8 14h8m-8 3h5"></path></symbol>
+<symbol id="i-light" viewBox="0 0 24 24"><path d="m13 2-8 12h6l-1 8 9-13h-6Z"></path></symbol>
+<symbol id="i-log" viewBox="0 0 24 24"><path d="M5 3h14v18H5Zm4 5h6m-6 4h6m-6 4h4"></path></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"></path></symbol>
+<symbol id="i-switch" viewBox="0 0 24 24"><path d="M3 7h17m-4-4 4 4-4 4M21 17H4m4-4-4 4 4 4"></path></symbol>
+</defs></svg>
+<aside class="rail">
+  <div class="brand-lockup"><div class="brand-mark" aria-label="灵眸"><span></span><i></i></div><div class="brand-name">灵眸<small>LINGMOU</small></div></div>
+  <div class="rail-rule"></div><div class="rail-section-label">工作空间</div>
+  <nav>
+    <button class="nav-item" data-view="tracking" title="光点追踪"><svg><use href="#i-target"></use></svg><span>光点追踪</span></button>
+    <button class="nav-item active" data-view="video" title="视频算法"><svg><use href="#i-video"></use></svg><span>视频算法</span></button>
+    <button class="nav-item" id="show-logs" title="运行记录"><svg><use href="#i-log"></use></svg><span>运行记录</span></button>
+  </nav>
+   <div class="rail-bottom"><button class="nav-item" id="show-model-config"><svg><use href="#i-settings"></use></svg><span>模型标定</span></button><div class="rail-signature"><span class="signature-symbol">◎</span><div>精密视觉控制<small>VISION CONSOLE / 02</small></div></div></div>
+</aside>
+<div class="shell">
+  <header class="topbar">
+    <div class="wordmark">设备控制中心<span>VISION CONTROL</span></div>
+    <div class="breadcrumb"><span>工作空间</span><b>/</b><strong id="breadcrumb-view">视频算法</strong></div>
+    <div class="connection"><span id="connection-dot" class="status-dot demo"></span><span id="connection-label">离线演示</span><span class="divider"></span><select id="port" aria-label="设备串口"><option value="COM5">COM5</option><option value="COM7">COM7</option><option value="COM3">COM3</option><option value="COM6">COM6</option><option value="COM4">COM4</option></select><button class="icon-button" id="refresh-ports" title="刷新串口"><svg><use href="#i-refresh"></use></svg></button><button id="connect" class="button connect-button"><svg><use href="#i-link"></use></svg><span>连接设备</span></button></div>
+  </header>
+  <main>
+    <section class="page-heading"><div><div class="eyebrow"><span></span>PRECISION IN MOTION</div><h1 id="page-title">视频算法工作台<span class="title-dot">.</span></h1><p id="page-subtitle">视频算法切换 · 双轴姿态映射 · 图像增强与选区</p></div><div class="heading-actions"><span class="local-pill"><i></i>本地工作空间</span><button id="show-switch" class="button subtle"><svg><use href="#i-switch"></use></svg>模式选择</button></div></section>
+    <section class="metrics">
+      <article class="metric"><div class="metric-icon teal"><svg><use href="#i-cube"></use></svg></div><div class="metric-content"><span class="metric-label">当前工作模式</span><strong id="mode-value">离线动作演示</strong><span id="mode-note" class="metric-note">非设备反馈</span></div><span id="mode-tag" class="tiny-tag">DEMO</span></article>
+      <article class="metric"><div class="metric-icon cyan"><span>01</span></div><div class="metric-content"><span class="metric-label">PAN <em>水平转轴</em></span><strong id="pan-angle" class="number">142.90<small>°</small></strong><span class="metric-note"><b id="pan-speed">+0.07 rpm</b><i></i><b id="pan-current">0.210 A</b></span></div><span id="pan-state" class="axis-state demo">演示数据</span></article>
+      <article class="metric"><div class="metric-icon purple"><span>02</span></div><div class="metric-content"><span class="metric-label">TILT <em>俯仰转轴</em></span><strong id="tilt-angle" class="number">190.06<small>°</small></strong><span class="metric-note"><b id="tilt-speed">-1.17 rpm</b><i></i><b id="tilt-current">0.207 A</b></span></div><span id="tilt-state" class="axis-state demo">演示数据</span></article>
+      <article class="metric target-metric"><div class="metric-icon blue"><svg><use href="#i-target"></use></svg></div><div class="metric-content"><span class="metric-label">视觉目标</span><strong id="target-value">等待检测</strong><span id="target-note" class="metric-note">相机画面从 HDMI 输出</span></div></article>
+    </section>
+    <div class="tracking-workspace hidden" id="tracking-view">
+      <div class="main-column" id="tracking-model-host">
+        
+        <section class="chart-card panel"><div class="panel-heading"><div class="chart-title"><span class="chart-icon"><svg><use href="#i-chart"></use></svg></span><h2>双轴姿态趋势<span>相对零位 / °</span></h2></div><div class="chart-legend"><span class="legend pan">PAN</span><span class="legend tilt">TILT</span><span class="chart-duration">最近 20 秒</span></div></div><div class="chart-wrap"><canvas id="pose-chart" width="947" height="117"></canvas><div id="chart-empty" class="hidden">连接设备后显示实际运动趋势</div></div></section>
+      </div>
+      <aside class="control-column">
+        <section class="control-card panel"><div class="panel-heading"><div class="control-title"><span class="control-glyph"><svg><use href="#i-target"></use></svg></span><h2>光点追踪控制</h2></div><span class="tiny-tag">D2</span></div>
+          <div class="control-body">
+            <div class="tracking-parameters">
+            <div class="field-label">视觉标定<span id="calibration-status">已加载</span></div><button class="calibration-file" id="choose-calibration"><span class="file-symbol"><svg><use href="#i-file"></use></svg></span><span><b id="calibration-name">calibration.json</b><small>点击更换标定文件</small></span><svg class="file-arrow"><use href="#i-arrow"></use></svg></button><input id="calibration-upload" type="file" accept=".json,application/json" hidden="">
+            <div class="section-label">检测参数<span>DETECTION</span></div>
+            <label class="range-field"><span>亮度阈值</span><output id="brightness-output">160</output><input id="brightness" type="range" min="0" max="255" value="160" style="--fill: 62.745098039215684%;"></label>
+            <label class="range-field"><span>色差阈值</span><output id="chroma-output">40</output><input id="chroma" type="range" min="1" max="255" value="40" style="--fill: 15.686274509803921%;"></label>
+            <div class="inline-field"><label for="radius">光框半径</label><div class="number-field"><input id="radius" type="number" min="4" max="64" value="10"><span>px</span></div></div>
+            <label class="toggle-row"><span><svg><use href="#i-light"></use></svg>启动时开启激光框</span><input id="laser-on-start" type="checkbox" checked=""><i class="toggle"></i></label>
+            </div>
+            <div class="tracking-actions">
+            <div class="control-separator"></div>
+            <button class="button home-button" data-action="home"><svg><use href="#i-home"></use></svg>双轴回位 / 使能<span>↗</span></button>
+            <button class="button primary" id="start-track"><svg><use href="#i-play"></use></svg>开始光点跟踪<svg><use href="#i-arrow"></use></svg></button>
+            <div class="two-buttons"><button class="button stop-button" data-action="stop"><svg><use href="#i-stop"></use></svg>停止 / 关光</button><button class="button neutral" data-action="disable"><svg><use href="#i-power"></use></svg>双轴失能</button></div>
+            <div class="secondary-actions"><button id="detect-only">仅检测光点</button><span></span><button id="laser-off">仅关闭激光</button><span></span><button id="laser-on">打开激光</button></div>
+            </div>
+          </div>
+        </section>
+        <details class="shape-card panel"><summary><span><svg><use href="#i-layers"></use></svg>颜色 / 形状识别</span><b id="shape-capability">E7</b><i>⌄</i></summary><div class="shape-body"><div class="shape-fields"><label>目标颜色<select id="shape-color"><option value="auto">自动</option><option value="red">红色</option><option value="green">绿色</option><option value="blue">蓝色</option></select></label><label>描边时长 / 秒<input id="shape-seconds" type="number" min="1" max="3600" value="20"></label></div><div class="two-buttons"><button id="shape-detect" class="button neutral" disabled="">只检测形状</button><button id="shape-draw" class="button neutral" disabled="">开始静态描边</button></div><p id="shape-result">连接支持 E7 的工程后启用</p><p id="shape-phase" class="muted">等待连接</p><p id="shape-diagnostics" class="muted"></p><button class="button stop-button full" data-action="stop">停止描边 / 关光</button></div></details>
+        <section class="record-card panel"><div><svg><use href="#i-log"></use></svg><span>运行数据记录<small id="record-note">角度 · 转速 · 电流</small></span></div><button id="record" class="record-button" title="开始 / 停止记录"><i></i><span>记录</span></button></section>
+      </aside>
+    </div>
+    <section id="video-view" class="video-workspace">
+      <div class="video-main" id="video-model-host"><section class="model-card panel" id="gimbal-model">
+          <div class="panel-heading model-heading"><div class="assembly-title"><span class="assembly-glyph"><svg><use href="#i-cube"></use></svg></span><div><span class="overline">ASSEMBLY / DIGITAL TWIN</span><h2>双轴姿态映射 <span>装配体 02</span></h2></div></div><span class="feedback-pill demo" id="feedback-pill"><i></i>离线演示 · 非设备反馈</span></div>
+          <div id="model-viewport" class="model-viewport"><canvas data-engine="three.js r160" width="975" height="283" style="display: block;"></canvas>
+            <div id="model-loading" class="model-loading loaded"><span class="spinner"></span><strong>载入精密装配体</strong><small>正在准备三维工作空间</small></div>
+            <div class="viewport-watermark">02<span>OPTICAL GIMBAL</span></div>
+            <div class="stage-caption"><span>双轴联动</span><b>PAN <i>×</i> TILT</b><div><i></i>水平旋转 <i></i>俯仰旋转</div></div>
+            <div class="viewport-tools"><button id="reset-view" class="icon-button" title="复位视角"><svg><use href="#i-fit"></use></svg></button><button id="front-view" class="icon-button" title="正视图"><svg><use href="#i-cube"></use></svg></button><span></span><button id="section-view" class="icon-button" title="查看内部结构"><svg><use href="#i-layers"></use></svg></button></div>
+            <div id="pan-pin" class="joint-pin pan-pin visible" style="left: 384.606px; top: 228px;"><span class="pin-dot"></span><span><b>PAN</b><em id="pan-offset">+26.0°</em></span></div>
+            <div id="tilt-pin" class="joint-pin tilt-pin visible" style="left: 537.351px; top: 90.0755px;"><span class="pin-dot"></span><span><b>TILT</b><em id="tilt-offset">+10.1°</em></span></div>
+            <div class="viewport-hint"><span class="mouse-shape"></span>拖动旋转<span>·</span>滚轮缩放</div><div class="orientation-label"><i></i>ISOMETRIC VIEW</div>
+          </div>
+          <div class="model-footer"><div class="segmented"><button class="selected" id="assembled-view">完整装配</button><button id="internal-view">内部结构</button></div><span id="model-status">演示动作 · 未控制设备</span><button id="demo" class="button demo-button active"><svg><use href="#i-play"></use></svg><span>停止离线演示</span></button></div>
+        </section><section class="panel video-modes"><div class="panel-heading"><h2>视频算法<span>处理画面从 HDMI 输出</span></h2><span class="tiny-tag">D1</span></div><div class="mode-grid" id="video-mode-grid"><button data-mode="0" class="mode-tile" aria-pressed="false"><span>01</span><svg><use href="#i-video"></use></svg><b>原始画面</b><small>Original</small></button><button data-mode="1" class="mode-tile selected" aria-pressed="true"><span>02</span><svg><use href="#i-layers"></use></svg><b>灰度处理</b><small>Grayscale</small></button><button data-mode="2" class="mode-tile" aria-pressed="false"><span>03</span><svg><use href="#i-cube"></use></svg><b>二值化</b><small>Binary</small></button><button data-mode="3" class="mode-tile" aria-pressed="false"><span>04</span><svg><use href="#i-fit"></use></svg><b>Sobel 边缘</b><small>Edge detection</small></button><button data-mode="4" class="mode-tile" aria-pressed="false"><span>05</span><svg><use href="#i-target"></use></svg><b>颜色跟踪</b><small>Color tracking</small></button><button data-mode="5" class="mode-tile" aria-pressed="false"><span>06</span><svg><use href="#i-chart"></use></svg><b>帧差运动检测</b><small>Frame difference</small></button></div></section>
+        <section class="panel video-options"><div class="panel-heading"><h2>图像增强与选区</h2><button id="read-options" class="text-button">读取设备参数 ↗</button></div><div class="video-settings"><div class="option-checks" id="algorithm-flags"><label><input type="checkbox" checked="">自动白平衡</label><label><input type="checkbox" checked="">色调曲线 / 高光压缩</label><label><input type="checkbox" checked="">降噪</label><label><input type="checkbox" checked="">饱和度增强</label><label><input type="checkbox">亮度直方图均衡</label><label><input type="checkbox" checked="">明暗均匀校正</label></div><div class="three-fields"><label>基础算法范围<select id="scope-base"><option value="0">全屏</option><option value="1">选定区域</option></select></label><label>附加特效范围<select id="scope-effect"><option value="0">全屏</option><option value="1" selected="">选定区域</option></select></label><label>直方图范围<select id="scope-histogram"><option value="0">全屏</option><option value="1">选定区域</option></select></label></div><div class="three-fields"><label>选区来源<select id="region-source"><option value="0">手动矩形</option><option value="1">目标检测框</option></select></label><label class="check-field"><input id="region-union" type="checkbox" checked="">多点选区</label><label class="check-field"><input id="region-locked" type="checkbox">锁定色标选区</label></div><div class="rectangle-fields"><label>X0<input id="rect-x0" type="number" min="0" max="1279" value="320"></label><label>Y0<input id="rect-y0" type="number" min="0" max="719" value="180"></label><label>X1<input id="rect-x1" type="number" min="0" max="1279" value="959"></label><label>Y1<input id="rect-y1" type="number" min="0" max="719" value="539"></label><button id="apply-options" class="button primary">应用并读回</button></div><p id="video-options-note" class="muted">等待连接视频工程</p></div></section>
+        <section class="panel video-stats"><div class="panel-heading"><h2>视频实时统计</h2><span class="legend pan">HDMI</span></div><p id="video-stats">等待设备采样</p></section>
+      </div>
+      <aside class="video-side"><section class="panel"><div class="panel-heading"><h2>手动云台</h2><span class="tiny-tag">PAN / TILT</span></div><div class="control-body"><div class="inline-field"><label for="jog-speed">运动速度</label><div class="number-field"><input id="jog-speed" type="number" min="0.2" max="10" step="0.2" value="2"><span>rpm</span></div></div><div class="jog-pad"><button data-jog="w" aria-label="上">↑</button><button data-jog="a" aria-label="左">←</button><span><svg><use href="#i-target"></use></svg></span><button data-jog="d" aria-label="右">→</button><button data-jog="s" aria-label="下">↓</button></div><p class="jog-hint">按住方向键或 WASD，松开减速停车</p><button class="button home-button full" data-action="home"><svg><use href="#i-home"></use></svg>双轴回位 / 使能</button><div class="two-buttons"><button class="button stop-button" data-action="stop">停止并保持</button><button class="button neutral" data-action="disable">双轴失能</button></div></div></section>
+        <section class="panel"><div class="panel-heading"><h2>附加特效与检测</h2></div><div class="control-body"><label class="stack-field">附加特效<select id="video-effect"><option value="0">关闭</option><option value="1">仅轮廓</option><option value="2">马赛克</option><option value="3">卡通</option><option value="4">贴图</option><option value="5">蓝色反相</option></select></label><label class="stack-field">目标颜色<select id="video-color"><option value="0">红色</option><option value="1">绿色</option><option value="2">蓝色</option></select></label><label class="toggle-row"><span>OSD 信息叠加</span><input id="osd" type="checkbox" checked=""><i class="toggle"></i></label><div class="control-separator"></div><div class="shape-fields"><label>帧差阈值<input id="motion-threshold" type="number" min="1" max="255" value="18"></label><label>最小区域块数<input id="motion-minimum" type="number" min="1" max="32" value="3"></label></div><div class="two-buttons"><button id="apply-motion" class="button neutral">应用参数</button><button id="reset-motion" class="button neutral">重建参考帧</button></div><p id="motion-info" class="muted">等待运动检测采样</p></div></section>
+      </aside>
+    </section>
+    <footer class="statusbar"><div><span id="footer-dot" class="status-dot demo"></span><span id="footer-message" title="控制台已就绪，等待连接设备">控制台已就绪，等待连接设备</span></div><button id="status-log-button">查看运行记录<svg><use href="#i-arrow"></use></svg></button><span id="footer-time">LOCAL / DEMO</span></footer>
+  </main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<dialog id="logs-dialog"><div class="dialog-heading"><div><span class="overline">ACTIVITY</span><h2>运行记录</h2></div><button class="icon-button close-dialog" title="关闭"><svg><use href="#i-close"></use></svg></button></div><div id="logs-list" class="logs-list"><div class="log-entry info"><time>20:59:21</time><span>控制台已就绪，等待连接设备</span></div></div></dialog>
+<dialog id="model-dialog"><div class="dialog-heading"><div><span class="overline">MODEL CALIBRATION</span><h2>模型显示标定</h2></div><button class="icon-button close-dialog" title="关闭"><svg><use href="#i-close"></use></svg></button></div><p class="muted">设置模型的参考角度与显示方向。仅影响三维显示。</p><div class="model-config-fields"><label>PAN 参考角度 / °<input id="config-pan" type="number" min="0" max="359.999999" step="0.001"></label><label>显示方向<select id="direction-pan"><option value="1">正向</option><option value="-1">反向</option></select></label><label>TILT 参考角度 / °<input id="config-tilt" type="number" min="0" max="359.999999" step="0.001"></label><label>显示方向<select id="direction-tilt"><option value="1">正向</option><option value="-1">反向</option></select></label></div><button id="save-model-config" class="button primary full">保存显示标定</button></dialog>
+<dialog id="switch-dialog"><div class="dialog-heading"><div><span class="overline">WORKSPACE</span><h2>模式选择</h2></div><button class="icon-button close-dialog" title="关闭"><svg><use href="#i-close"></use></svg></button></div><p class="muted">软件切换依赖板卡已正确配置双镜像 Flash。</p><label class="flash-check"><input id="flash-ready" type="checkbox">已按工程说明烧入双镜像 Flash</label><div class="switch-choices"><button class="button neutral" data-switch="0"><svg><use href="#i-video"></use></svg>D1 视频 / 手动云台</button><button class="button neutral" data-switch="1"><svg><use href="#i-target"></use></svg>D2 光点跟踪 / 形状识别</button></div></dialog>
+<script src="startup.js"></script>
+<script type="module" src="console.js"></script>
+
+<pre id="qa-result" hidden="">{"passed":true,"checks":[{"name":"original_mesh_count","passed":true},{"name":"original_triangle_count","passed":true},{"name":"fixed_base","passed":true},{"name":"pan_hierarchy","passed":true},{"name":"tilt_hierarchy","passed":true},{"name":"internal_structure","passed":true},{"name":"assembled_structure","passed":true},{"name":"joint_rotation","passed":true},{"name":"webgl","passed":true},{"name":"encoder_wrap","passed":true},{"name":"video_workspace","passed":true},{"name":"video_model_visible","passed":true},{"name":"video_layout_width","passed":true},{"name":"video_mode_0","passed":true},{"name":"video_mode_1","passed":true},{"name":"video_mode_2","passed":true},{"name":"video_mode_3","passed":true},{"name":"video_mode_4","passed":true},{"name":"video_mode_5","passed":true},{"name":"video_selection_green","passed":true},{"name":"video_encoder_pose","passed":true},{"name":"shared_model_preserves_pose","passed":true},{"name":"tracking_model_restored","passed":true},{"name":"layout_width","passed":true},{"name":"no_script_errors","passed":true},{"name":"timeline_visible","passed":true},{"name":"local_control_channel","passed":true},{"name":"stop_button_visible","passed":true}],"errors":[],"preview":true,"source_sha256":"b57bcdbfbf650069a2fc20a358beccc8f75ff22d7335b0ab5236ae00bfef5911","viewport":{"width":1574,"height":1000,"timeline_bottom":959.1875}}</pre></body></html>

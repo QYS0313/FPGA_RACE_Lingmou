@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "renderer": "Intel(R) RaptorLake-S Mobile Graphics Controller",
+  "parts": 177,
+  "triangles": 38212,
+  "samples": 4,
+  "frames": 30,
+  "seconds": 0.18794859999979963,
+  "serial_opened": false,
+  "native_context_released": true
+}
