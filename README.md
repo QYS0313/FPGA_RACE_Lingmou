@@ -35,3 +35,25 @@ Software/
     Tests/          离线单元测试与界面检查
 Model/              结构件模型（STL）
 ```
+
+## 运行上位机
+
+仓库未包含随包 Python 运行时，`Launch_GUI.cmd` 无法直接启动。请使用 Python 3.14，并确保系统已安装 Edge 或 Chrome：
+
+```powershell
+cd Software\Host_Software
+python App\desktop_server.py
+```
+
+FPGA 工程请放在纯英文路径下，用 TD 6.2.1 打开，TD 无法打开中文路径。
+
+## License
+
+本项目团队编写的代码和模型按 [MIT License](LICENSE) 开源。
+
+以下第三方文件的版权归各自所有者，不在 MIT 许可范围内，使用时请遵守其原有条款：
+
+- 安路 TD 生成的 IP（`user_source/ip_source/`）
+- 加密 IP（`user_source/hdl_source/` 下带 `pragma protect` 的文件，如 `*.enc.v`、`*.enc.sv`）
+- pyserial（`Host_Software/Vendor/`）
+- Three.js（`Host_Software/Web/assets/three.module.js`）
