@@ -14,7 +14,7 @@ Software/
     Video_D1/       视频算法、直方图、帧差运动检测、手动云台
     Tracking_D2/    绿色光点追踪、颜色/形状激光描边
   Host_Software/    上位机控制台（Python + HTML/CSS/JS）
-Model/              模型文件（待上传）
+Model/              结构件模型（STL）
 ```
 
 ## FPGA 工程
