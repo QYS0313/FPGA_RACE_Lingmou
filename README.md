@@ -43,9 +43,13 @@ python App\desktop_server.py
 - `Host_Software/Backups/`：开发过程备份
 - `SHA256SUMS.json`：原交付包校验清单
 
+## License
+
+本项目团队编写的代码和模型按 [MIT License](LICENSE) 开源。
+
 ## 第三方内容
 
-本仓库包含第三方文件，其版权归各自所有者：
+本仓库包含以下第三方文件，版权归各自所有者，不在上述 MIT 许可范围内，使用时请遵守其原有条款：
 
 - 安路 TD 生成的 IP（`user_source/ip_source/`）
 - 加密 IP（`user_source/hdl_source/` 下带 `pragma protect` 的文件，如 `*.enc.v`、`*.enc.sv`）
